@@ -1,5 +1,5 @@
 require("dotenv").config();
-const prefix = process.env.MY_PREFIX;
+const prefix = process.env.prefix;
 
 const kick = require('./kick');
 const ban = require('./ban');
