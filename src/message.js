@@ -1,9 +1,10 @@
 require("dotenv").config();
-const { prefix } = process.env;
+const prefix = process.env.MY_PREFIX;
 
 const kick = require('./kick');
 const ban = require('./ban');
-const clearchat = require('./clearchat')
+const clearchat = require('./clearchat');
+const help = require('./help');
 
 module.exports = client => {
   client.on('message', message => {
@@ -26,7 +27,7 @@ module.exports = client => {
         clearchat(message);
         break;
       case 'help':
-        message.reply('Under maintenance!!');
+        help(message, prefix);
         break;
       default:
         message.reply(`Error! Unknown argument try ${prefix}help to show more options`);
